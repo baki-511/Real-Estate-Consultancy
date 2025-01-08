@@ -635,6 +635,7 @@ a {
 
 .section-head h3 {
     position: relative;
+    font-weight: 500;
     font-size: 38px;
     z-index: 2;
 }
