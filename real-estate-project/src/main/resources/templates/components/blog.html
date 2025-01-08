@@ -13,84 +13,83 @@
 
     <div class="box-container">
         <!-- blog 1  -->
-        <div class="box shadow">
+        <div class="box shadow" th:each="blog : ${blogs}">
             <div class="image">
-                <img src="/user/img/blog/banner1.jpg" alt="" />
-                <h3><i class="fas fa-heart"></i> 20</h3>
+                <img th:src="|data:image/jpeg;base64,${blog.image}|" alt="" />
             </div>
             <div class="content">
-                <h3>This is Heading of Blog 1</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                    reprehenderit .
-                </p>
+                <h3 th:text="${blog.title}">This is Heading of Blog 1</h3>
+<!--                <p>-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro-->
+<!--                    reprehenderit .-->
+<!--                </p>-->
                 <a href="#" class="btn">read more</a>
             </div>
         </div>
 
         <!-- blog 1  -->
-        <div class="box shadow">
-            <div class="image">
-                <img src="/user/img/blog/event-3.jpg" alt="" />
-                <h3><i class="fas fa-heart"></i> 28</h3>
-            </div>
-            <div class="content">
-                <h3>This is Heading of Blog 2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                    reprehenderit .
-                </p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+<!--        <div class="box shadow">-->
+<!--            <div class="image">-->
+<!--                <img src="/user/img/blog/event-3.jpg" alt="" />-->
+<!--                <h3><i class="fas fa-heart"></i> 28</h3>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <h3>This is Heading of Blog 2</h3>-->
+<!--                <p>-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro-->
+<!--                    reprehenderit .-->
+<!--                </p>-->
+<!--                <a href="#" class="btn">read more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- blog 1  -->
-        <div class="box shadow">
-            <div class="image">
-                <img src="/user/img/blog/banner2.jpg" alt="" />
-                <h3><i class="fas fa-heart"></i> 34</h3>
-            </div>
-            <div class="content">
-                <h3>This is Heading of Blog 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                    reprehenderit.
-                </p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+<!--        &lt;!&ndash; blog 1  &ndash;&gt;-->
+<!--        <div class="box shadow">-->
+<!--            <div class="image">-->
+<!--                <img src="/user/img/blog/banner2.jpg" alt="" />-->
+<!--                <h3><i class="fas fa-heart"></i> 34</h3>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <h3>This is Heading of Blog 3</h3>-->
+<!--                <p>-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro-->
+<!--                    reprehenderit.-->
+<!--                </p>-->
+<!--                <a href="#" class="btn">read more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- blog 1  -->
-        <div class="box shadow">
-            <div class="image">
-                <img src="/user/img/blog/banner3.jpg" alt="" />
-                <h3><i class="fas fa-heart"></i> 66</h3>
-            </div>
-            <div class="content">
-                <h3>This is Heading of Blog 4</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                    reprehenderit .
-                </p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+<!--        &lt;!&ndash; blog 1  &ndash;&gt;-->
+<!--        <div class="box shadow">-->
+<!--            <div class="image">-->
+<!--                <img src="/user/img/blog/banner3.jpg" alt="" />-->
+<!--                <h3><i class="fas fa-heart"></i> 66</h3>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <h3>This is Heading of Blog 4</h3>-->
+<!--                <p>-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro-->
+<!--                    reprehenderit .-->
+<!--                </p>-->
+<!--                <a href="#" class="btn">read more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!-- blog 1  -->
-        <div class="box shadow">
-            <div class="image">
-                <img src="/user/img/blog/home-1.jpg" alt="" />
-                <h3><i class="fas fa-heart"></i> 75</h3>
-            </div>
-            <div class="content">
-                <h3>This is Heading of Blog 5</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                    reprehenderit .
-                </p>
-                <a href="#" class="btn">read more</a>
-            </div>
-        </div>
+<!--        &lt;!&ndash; blog 1  &ndash;&gt;-->
+<!--        <div class="box shadow">-->
+<!--            <div class="image">-->
+<!--                <img src="/user/img/blog/home-1.jpg" alt="" />-->
+<!--                <h3><i class="fas fa-heart"></i> 75</h3>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <h3>This is Heading of Blog 5</h3>-->
+<!--                <p>-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro-->
+<!--                    reprehenderit .-->
+<!--                </p>-->
+<!--                <a href="#" class="btn">read more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
 <!--        &lt;!&ndash; blog 1  &ndash;&gt;-->
 <!--        <div class="box shadow">-->

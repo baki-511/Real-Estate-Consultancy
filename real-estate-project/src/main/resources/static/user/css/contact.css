@@ -106,7 +106,7 @@
     margin-top: 6px;
 }
 
-.right-side .button input[type="button"] {
+.right-side .button button {
     color: #fff;
     font-size: 18px;
     outline: none;
@@ -118,7 +118,7 @@
     transition: all 0.3s ease;
 }
 
-.right-side .button input[type="button"]:hover {
+.right-side .button button:hover {
     background: #5029bc;
 }
 

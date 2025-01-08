@@ -9,7 +9,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long blogId;
     private String title;
-    @Column(length = 2000)
+    @Column(length = 5000)
     private String description;
     
     @Lob
