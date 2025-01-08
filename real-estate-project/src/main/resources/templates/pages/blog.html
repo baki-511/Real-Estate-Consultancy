@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Section</title>
+    <title>Blog Section</title>
     <!--    Common Css-->
     <div th:replace="~{common :: common(~{::link})}"></div>
     <link rel="stylesheet" th:href="@{/user/css/blog.css}">
@@ -14,12 +14,30 @@
         .header, footer {
             font-size: 16px
         }
+
+
+        @media (min-width: 1118px) {
+          .section-head {
+            margin-top: 55px;
+          }
+        }
+
+        @media (max-width: 1117px) {
+          .section-head {
+            margin-top: 35px;
+          }
+        }
+
+
     </style>
 </head>
 <body>
 
 <!--Header Section-->
 <div th:replace="~{components/header :: header}"></div>
+
+<!--Page Info-->
+<div th:insert="~{components/common :: section-head('Blog','/blog', 'Blog')}"></div>
 
 <!-- Blog Section -->
 <div th:replace="~{components/blog :: blog}"></div>

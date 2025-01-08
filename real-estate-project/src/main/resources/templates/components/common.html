@@ -16,5 +16,15 @@
     </div>
 </div>
 
+<div class="section-head" th:fragment="section-head(pageTitle,currentLink,linkTitle)">
+    <div class="section-title">
+        <h3 class="page-title" th:text="${pageTitle}">About Section</h3>
+    </div>
+    <div class="link-sect">
+        <span><a th:href="@{/}"><i class="fa-solid fa-house"></i>&nbsp;&nbsp; Home</a></span>
+        <span><a th:href="@{${currentLink}}">/&nbsp; [[${linkTitle}]]</a></span>
+    </div>
+</div>
+
 </body>
 </html>

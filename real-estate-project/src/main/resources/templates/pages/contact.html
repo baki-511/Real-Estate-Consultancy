@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Section</title>
+    <title>Contact Us Section</title>
     <!--    Common Css-->
     <div th:replace="~{common :: common(~{::link})}"></div>
     <link rel="stylesheet" th:href="@{/user/css/contact.css}">
@@ -14,6 +14,11 @@
 
 <!--Header Section-->
 <div th:replace="~{components/header :: header}"></div>
+
+
+<!--Page Info-->
+<div th:insert="~{components/common :: section-head('Contact Us','/contact', 'Contact Us')}"></div>
+
 
 <!-- Contact Section -->
 <div th:replace="~{components/contact :: contact}"></div>

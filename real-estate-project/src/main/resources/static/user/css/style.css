@@ -603,6 +603,70 @@ a {
 /* Testimonial Section End  */
 
 
+/* Section heading & Link Start  */
+.section-head {
+    width: 100%;
+    height: 300px;
+    /* background-color: #232d7d; */
+    background: url('/user/img/banner1.jpg');
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-head::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.section-head h3 {
+    position: relative;
+    font-size: 38px;
+    z-index: 2;
+}
+
+.section-head a {
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.section-head .link-sect {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+@media (min-width: 1118px) {
+  .section-head {
+    margin-top: 88px;
+  }
+}
+
+@media (max-width: 1117px) {
+  .section-head {
+    margin-top: 55px;
+  }
+}
+
+
+/* Section heading & Link End */
+
 
 
 /* Footer Start  */
