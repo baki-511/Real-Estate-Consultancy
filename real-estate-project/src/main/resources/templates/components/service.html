@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Service Section  -->
+<div class="row" th:fragment="service">
+    <div class="img-wrapper">
+        <img  th:src="|data:image/jpeg;base64,${service.image}|" alt="" />
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <span class="text-wrapper"> <span> </span> event service section </span>
+            <h2 th:text="${service.title}">This is Event Heading</h2>
+            <p th:text="${service.description}">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
+                delectus quam voluptas enim nam corrupti doloremque accusantium sint
+                rerum animi esse, veniam ullam repellendus totam? Minima, eveniet
+                sed optio repudiandae veniam, dolor in iusto natus nesciunt, nemo
+                error recusandae cupiditate asperiores fugiat id adipisci voluptas!
+                Assumenda exercitationem doloremque blanditiis quibusdam.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" th:fragment="service1">
+    <div class="img-wrapper">
+        <img src="/user/img/banner2.jpg" alt="" />
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <span class="text-wrapper"> <span> </span> Service section </span>
+            <h2>Service 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
+                delectus quam voluptas enim nam corrupti doloremque accusantium sint
+                rerum animi esse, veniam ullam repellendus totam? Minima, eveniet
+                sed optio repudiandae veniam, dolor in iusto natus nesciunt, nemo
+                error recusandae cupiditate asperiores fugiat id adipisci voluptas!
+                Assumenda exercitationem doloremque blanditiis quibusdam.
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -28,6 +28,11 @@ public class HomeController {
         return "/pages/blog";
     }
     
+    @GetMapping("/service/1")
+    public String service() {
+        return "/pages/service";
+    }
+    
     @GetMapping("/contact")
     public String contact() {
         return "/pages/contact";

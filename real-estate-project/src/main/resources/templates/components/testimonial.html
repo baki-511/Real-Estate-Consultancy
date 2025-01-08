@@ -15,11 +15,10 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <!-- One  -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" th:each="testimonial: ${testimonials}">
                     <div class="testi-item">
                         <div class="testi-avatar">
-                            <img src="/user/img/testi1.jpg" alt="" />
-<!--                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />-->
+                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />
                         </div>
                         <div class="testimonial-text-before">
                             <i class="fa fa-quote-right"></i>
@@ -32,7 +31,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <p >
+                            <p th:text="${testimonial.description}">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                 Odio perspiciatis magni voluptatum, laborum aperiam eaque!
                                 Esse sapiente voluptas est saepe eius cumque iure? Eos,
@@ -40,7 +39,7 @@
                                 molestiae pariatur, natus repellendus!
                             </p>
                             <div class="testimonials-avatar">
-                                <h3 >John Doe</h3>
+                                <h3 th:text="${testimonial.title}">John Doe</h3>
                             </div>
                         </div>
                         <div class="testimonial-text-after">
@@ -48,112 +47,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Two  -->
-                <div class="swiper-slide">
-                    <div class="testi-item">
-                        <div class="testi-avatar">
-                            <img src="/user/img/testi2.jpg" alt="" />
-<!--                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />-->
-                        </div>
-                        <div class="testimonial-text-before">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="testimonials-text">
-                            <div class="listing-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p >
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Odio perspiciatis magni voluptatum, laborum aperiam eaque!
-                                Esse sapiente voluptas est saepe eius cumque iure? Eos,
-                                nemo. Labore perspiciatis ipsam optio eveniet dolorum
-                                molestiae pariatur, natus repellendus!
-                            </p>
-                            <div class="testimonials-avatar">
-                                <h3 >John Doe</h3>
-                            </div>
-                        </div>
-                        <div class="testimonial-text-after">
-                            <i class="fa fa-quote-left"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Three  -->
-                <div class="swiper-slide">
-                    <div class="testi-item">
-                        <div class="testi-avatar">
-                            <img src="/user/img/testi3.jpg" alt="" />
-<!--                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />-->
-                        </div>
-                        <div class="testimonial-text-before">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="testimonials-text">
-                            <div class="listing-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p >
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Odio perspiciatis magni voluptatum, laborum aperiam eaque!
-                                Esse sapiente voluptas est saepe eius cumque iure? Eos,
-                                nemo. Labore perspiciatis ipsam optio eveniet dolorum
-                                molestiae pariatur, natus repellendus!
-                            </p>
-                            <div class="testimonials-avatar">
-                                <h3 >John Doe</h3>
-                            </div>
-                        </div>
-                        <div class="testimonial-text-after">
-                            <i class="fa fa-quote-left"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Four  -->
-                <div class="swiper-slide">
-                    <div class="testi-item">
-                        <div class="testi-avatar">
-                            <img src="/user/img/testi4.jpg" alt="" />
-<!--                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />-->
-                        </div>
-                        <div class="testimonial-text-before">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                        <div class="testimonials-text">
-                            <div class="listing-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p >
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Odio perspiciatis magni voluptatum, laborum aperiam eaque!
-                                Esse sapiente voluptas est saepe eius cumque iure? Eos,
-                                nemo. Labore perspiciatis ipsam optio eveniet dolorum
-                                molestiae pariatur, natus repellendus!
-                            </p>
-                            <div class="testimonials-avatar">
-                                <h3 >John Doe</h3>
-                            </div>
-                        </div>
-                        <div class="testimonial-text-after">
-                            <i class="fa fa-quote-left"></i>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

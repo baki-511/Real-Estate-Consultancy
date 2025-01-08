@@ -24,7 +24,7 @@
         <!--=============== NAV MENU ===============-->
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li><a href="#" class="nav__link">Home</a></li>
+                <li><a th:href="@{/home}" class="nav__link">Home</a></li>
 
                 <li><a th:href="@{/about}" class="nav__link">About</a></li>
 
@@ -36,68 +36,25 @@
 
                     <ul class="dropdown__menu">
                         <li>
-                            <a href="#" class="dropdown__link">
-                                Profiles
+                            <a th:href="@{/service/1}" class="dropdown__link">
+                                Service 1
                             </a>
                         </li>
 
                         <li>
                             <a href="#" class="dropdown__link">
-                                Accounts
+                                Service 2
                             </a>
                         </li>
 
                         <li>
-                            <a href="#" class="dropdown__link">
-                                Messages
+                            <a th:href="@{/about}" class="dropdown__link">
+                                Service 3
                             </a>
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="dropdown__item">
-                   <div class="nav__link">
-                      Ssdk <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                   </div>
 
-                   <ul class="dropdown__menu">
-                      <li>
-                         <a href="#" class="dropdown__link">
-                            <i class="ri-pie-chart-line"></i> Service 1
-                         </a>
-                      </li>
-
-                      <li>
-                         <a href="#" class="dropdown__link">
-                            <i class="ri-arrow-up-down-line"></i> Service 2
-                         </a>
-                      </li>
-                      <li class="dropdown__subitem">
-                         <div class="dropdown__link">
-                            <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                         </div>
-
-                         <ul class="dropdown__submenu">
-                            <li>
-                               <a href="#" class="dropdown__sublink">
-                                  <i class="ri-file-list-line"></i> Documents
-                               </a>
-                            </li>
-
-                            <li>
-                               <a href="#" class="dropdown__sublink">
-                                  <i class="ri-cash-line"></i> Payments
-                               </a>
-                            </li>
-
-                            <li>
-                               <a href="#" class="dropdown__sublink">
-                                  <i class="ri-refund-2-line"></i> Refunds
-                               </a>
-                            </li>
-                         </ul>
-                      </li>
-                   </ul>
-                </li> -->
 
                 <li><a th:href="@{/blog}" class="nav__link">Blogs</a></li>
 

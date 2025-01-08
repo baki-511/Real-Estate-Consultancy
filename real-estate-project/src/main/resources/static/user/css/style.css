@@ -677,7 +677,7 @@ footer {
   width: 100%;
   height: auto;
   padding: 50px 100px;
-  background: #fff;
+  background: #1D272F;
 }
 
 footer .container {
@@ -689,13 +689,13 @@ footer .container {
 
 footer .container .sec h2 {
   position: relative;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 footer .container .sec p {
-  color: #555;
+  color: #fff;
   padding-right: 25px;
 }
 
@@ -714,7 +714,7 @@ footer .container .sci li a {
   width: 360px;
   height: 36px;
   font-size: 32px;
-  background: #333;
+  background: #fff;
   display: grid;
   align-content: center;
   justify-content: center;
@@ -735,7 +735,7 @@ footer .container .quicklinks ul li {
 }
 
 footer .container .quicklinks ul li a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
   margin-bottom: 10px;
   display: inline-block;
@@ -752,21 +752,21 @@ footer .container .contact .info li {
 }
 
 footer .container .contact .info li span {
-  color: #555;
+  color: #fff;
   font-size: 20px;
 }
 
 footer .container .contact .info li a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
 }
 
 footer .copyrightText {
   width: 100%;
-  background: #fff;
+  background: #1D272F;
   padding: 20px 100px 30px;
   text-align: center;
-  color: #555;
+  color: #fff;
   margin-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
