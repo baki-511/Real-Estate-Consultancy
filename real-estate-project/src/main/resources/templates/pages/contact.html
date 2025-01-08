@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Section</title>
+    <!--    Common Css-->
+    <div th:replace="~{common :: common(~{::link})}"></div>
+    <link rel="stylesheet" th:href="@{/user/css/contact.css}">
+</head>
+<body>
+
+<!--Header Section-->
+<div th:replace="~{components/header :: header}"></div>
+
+<!-- Contact Section -->
+<div th:replace="~{components/contact :: contact}"></div>
+<div class="map_main" style="display: block;">
+    <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France"
+                width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<div th:replace="~{components/footer :: footer}"></div>
+
+
+
+<!-- Common Js -->
+<div th:replace="~{common :: common_js(~{::script})}"></div>
+</body>
+</html>

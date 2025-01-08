@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<header class="header" th:fragment="header">
+    <nav class="nav container">
+        <div class="nav__data">
+            <a href="#" class="nav__logo">
+                <i class="ri-planet-line"></i> ABC Company
+            </a>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line nav__burger"></i>
+                <i class="ri-close-line nav__close"></i>
+            </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li><a href="#" class="nav__link">Home</a></li>
+
+                <li><a th:href="@{/about}" class="nav__link">About</a></li>
+
+                <!--=============== DROPDOWN 1 ===============-->
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                        Service <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                Profiles
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                Accounts
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                Messages
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class="dropdown__item">
+                   <div class="nav__link">
+                      Ssdk <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                   </div>
+
+                   <ul class="dropdown__menu">
+                      <li>
+                         <a href="#" class="dropdown__link">
+                            <i class="ri-pie-chart-line"></i> Service 1
+                         </a>
+                      </li>
+
+                      <li>
+                         <a href="#" class="dropdown__link">
+                            <i class="ri-arrow-up-down-line"></i> Service 2
+                         </a>
+                      </li>
+                      <li class="dropdown__subitem">
+                         <div class="dropdown__link">
+                            <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                         </div>
+
+                         <ul class="dropdown__submenu">
+                            <li>
+                               <a href="#" class="dropdown__sublink">
+                                  <i class="ri-file-list-line"></i> Documents
+                               </a>
+                            </li>
+
+                            <li>
+                               <a href="#" class="dropdown__sublink">
+                                  <i class="ri-cash-line"></i> Payments
+                               </a>
+                            </li>
+
+                            <li>
+                               <a href="#" class="dropdown__sublink">
+                                  <i class="ri-refund-2-line"></i> Refunds
+                               </a>
+                            </li>
+                         </ul>
+                      </li>
+                   </ul>
+                </li> -->
+
+                <li><a th:href="@{/blog}" class="nav__link">Blogs</a></li>
+
+
+                <!--=============== DROPDOWN 2 ===============-->
+
+
+                <li><a th:href="@{/contact}" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

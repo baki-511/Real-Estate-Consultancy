@@ -1,0 +1,50 @@
+
+@media (max-width: 991px){
+    .row{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .row .content-wrapper{
+        padding-left: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .row{
+        width: 90%;
+    }
+
+    .row .content-wrapper h2{
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .row .content-wrapper p{
+        line-height: 24px;
+    }
+
+}
+
+@media (max-width: 721px){
+    .testimonials-carousel{
+        max-width: 90%;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .row .content-wrapper span.text-wrapper{
+        font-size: 18px;
+    }
+
+    .row .content-wrapper h2{
+        font-size: 25px;
+    }
+
+    .row .content-wrapper p{
+        font-size: 15px;
+        line-height: 22px;
+    }
+}

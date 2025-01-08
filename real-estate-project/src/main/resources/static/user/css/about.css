@@ -1,0 +1,93 @@
+.heading-title {
+    width: 100%;
+    /* height: 100px; */
+    background: #232d7d;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.heading-title p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.heading-title h3 {
+    /* color: #210070; */
+    color: #9fafca;
+    font-size: 32px;
+}
+
+/* Title Heading section on home page End  */
+
+
+/* About Us Section  */
+.row {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: auto;
+}
+
+.row .img-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.row .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.row .img-wrapper:hover img {
+    transform: scale(1.25);
+}
+
+.row .content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.row .content-wrapper span.text-wrapper {
+    display: block;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.row .content-wrapper span.text-wrapper span {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+}
+
+.row .content-wrapper h2 {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.row .content-wrapper p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 25px;
+}
+
+@media (min-width: 992px){
+    .row{
+        margin-top: 70px;
+    }
+}

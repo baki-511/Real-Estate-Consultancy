@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Management</title>
+    <!--    Common Css-->
+    <div th:replace="~{admin/common :: common(~{::link})}"></div>
+</head>
+<body>
+<input type="checkbox" id="sidebar-toggle">
+<!--Sidebar -->
+<div th:replace="~{admin/components/sidebar :: sidebar}"></div>
+
+
+<!--Main Content -->
+<div class="main-content">
+    <header th:replace="~{admin/components/header :: header}"></header>
+    <main>
+<!--        <div th:replace="~{admin/components/dashboard :: dashboard}"></div>-->
+    </main>
+</div>
+
+
+<!--Common Js-->
+<div th:replace="~{admin/common :: common_js(~{::script})}"></div>
+</body>
+</html>

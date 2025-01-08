@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Management</title>
+    <!--    Common Css-->
+    <div th:replace="~{admin/common :: common(~{::link})}"></div>
+</head>
+<body>
+<input type="checkbox" id="sidebar-toggle">
+<!--Sidebar -->
+<div th:replace="~{admin/components/sidebar :: sidebar}"></div>
+
+
+<!--Main Content -->
+<div class="main-content">
+    <header th:replace="~{admin/components/header :: header}"></header>
+    <main>
+        <div class="container">
+            <h2 class="text-center py-3 bg-light">All Products</h2>
+            <div class="card" >
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr class="py-3 fs-5 bg-success text-light">
+                            <th scope="col">ID</th>
+                            <th scope="col" class="text-nowrap">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="contact : ${contacts}" class="py-3">
+                            <td class="text-nowrap px-2" th:text="${contact.contactUsId}"></td>
+                            <td class="text-nowrap px-2" th:text="${contact.name}"></td>
+                            <td class="text-nowrap px-2" th:text="${contact.email}"></td>
+                            <td class="text-nowrap px-2" th:text="${contact.venue}"></td>
+                            <td class="text-nowrap px-2" th:text="${contact.mobile}"></td>
+                            <td class="" th:text="${contact.message}"></td>
+                            <td class="text-nowrap px-2">
+                                <a th:href="@{'/admin/contact/delete/'+ ${contact.contactUsId}}" class="btn btn-danger"><i class="fa-regular fa-trash-can fa-xs"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!--Common Js-->
+<div th:replace="~{admin/common :: common_js(~{::script})}"></div>
+</body>
+</html>
+
