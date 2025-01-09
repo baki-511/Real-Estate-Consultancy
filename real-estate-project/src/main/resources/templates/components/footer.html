@@ -11,7 +11,9 @@
 <footer th:fragment="footer">
     <div class="container">
         <div class="sec aboutus">
-            <h2><i class="ri-planet-line"></i> ABC Company</h2>
+            <h2>
+                <img src="/user/img/logo.png" style="width: 170px; height: 70px;"  alt="logo"/>
+            </h2>
             <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Consequatur sit tempore doloribus quibusdam nesciunt quia, magnam
@@ -33,12 +35,12 @@
 <!--            </ul>-->
         </div>
         <div class="sec quicklinks">
-            <h2>About Us</h2>
+            <h2>Our Links</h2>
             <ul>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/blog}">Blogs</a></li>
+                <li><a th:href="@{/contact}">Contact us</a></li>
             </ul>
         </div>
         <div class="sec quicklinks">
@@ -70,8 +72,8 @@
             </ul>
         </div>
     </div>
-    <div class="copyrightText">
-        <p>Copyrigh 2024. All right Reserved</p>
+    <div class="copyrightText" style="width:100%;">
+        <p>Copyright 2024. All right Reserved</p>
     </div>
 </footer>
 </body>

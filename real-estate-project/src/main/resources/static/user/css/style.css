@@ -390,6 +390,7 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 5px 10px;
   margin-bottom: 50px;
+  background: #fff;
 }
 
 .logo-container h1 {
@@ -420,6 +421,7 @@ a {
 .logo-slider img {
   width: 150px;
   height: 100px;
+  margin: auto;
 }
 
 .slick-next::before,
@@ -764,7 +766,7 @@ footer .container .contact .info li a {
 footer .copyrightText {
   width: 100%;
   background: #1D272F;
-  padding: 20px 100px 30px;
+  padding: 20px 10px 30px;
   text-align: center;
   color: #fff;
   margin-top: 20px;

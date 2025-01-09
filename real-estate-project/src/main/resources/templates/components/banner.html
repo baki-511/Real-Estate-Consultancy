@@ -12,13 +12,13 @@
 <section class="home swiper" id="home" th:fragment="banner">
     <div class="swiper-wrapper">
         <!-- Swiper Slide 1 -->
-        <div class="swiper-slide">
+        <div class="swiper-slide" th:each="banner : ${banners}">
             <div class="home-slide">
-                <img src="/user/img/banner1.jpg" class="slide-img" alt="" />
+                <img th:src="|data:image/jpeg;base64,${banner.image}|" class="slide-img" alt="" />
                 <div class="home-overlay"></div>
                 <div class="home-text slide-container">
-                    <h1 class="slide-title">Real <span>Estate 1</span></h1>
-                    <p class="slide-description">
+                    <h1 class="slide-title" th:text="${banner.title}">Real <span>Estate 1</span></h1>
+                    <p class="slide-description" th:text="${banner.description}">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
                         laboriosam totam repellendus at nulla delectus.
                     </p>
@@ -26,33 +26,33 @@
             </div>
         </div>
         <!-- Swiper Slide 2 -->
-        <div class="swiper-slide">
-            <div class="home-slide">
-                <img src="/user/img/banner2.jpg" class="slide-img" alt="" />
-                <div class="home-overlay"></div>
-                <div class="home-text slide-container">
-                    <h1 class="slide-title">Real <span>Estate 2</span></h1>
-                    <p class="slide-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                        laboriosam totam repellendus at nulla delectus.
-                    </p>
-                </div>
-            </div>
-        </div>
+<!--        <div class="swiper-slide">-->
+<!--            <div class="home-slide">-->
+<!--                <img src="/user/img/banner2.jpg" class="slide-img" alt="" />-->
+<!--                <div class="home-overlay"></div>-->
+<!--                <div class="home-text slide-container">-->
+<!--                    <h1 class="slide-title">Real <span>Estate 2</span></h1>-->
+<!--                    <p class="slide-description">-->
+<!--                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam-->
+<!--                        laboriosam totam repellendus at nulla delectus.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- Swiper Slide 3 -->
-        <div class="swiper-slide">
-            <div class="home-slide">
-                <img src="/user/img/banner3.jpg" class="slide-img" alt="" />
-                <div class="home-overlay"></div>
-                <div class="home-text slide-container">
-                    <h1 class="slide-title">Real <span>Estate 3</span></h1>
-                    <p class="slide-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                        laboriosam totam repellendus at nulla delectus.
-                    </p>
-                </div>
-            </div>
-        </div>
+<!--        <div class="swiper-slide">-->
+<!--            <div class="home-slide">-->
+<!--                <img src="/user/img/banner3.jpg" class="slide-img" alt="" />-->
+<!--                <div class="home-overlay"></div>-->
+<!--                <div class="home-text slide-container">-->
+<!--                    <h1 class="slide-title">Real <span>Estate 3</span></h1>-->
+<!--                    <p class="slide-description">-->
+<!--                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam-->
+<!--                        laboriosam totam repellendus at nulla delectus.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- Swiper Slide 4 -->
 <!--        <div class="swiper-slide">-->
 <!--            <div class="home-slide">-->

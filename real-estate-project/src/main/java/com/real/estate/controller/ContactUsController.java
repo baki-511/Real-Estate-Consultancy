@@ -22,7 +22,7 @@ public class ContactUsController {
     
     @GetMapping("")
     public String contactUs(Model model) {
-        model.addAttribute("serviceList", servicesService.getAllServices());
+        model.addAttribute("services", servicesService.getAllServices());
         return "/pages/contact";
     }
    

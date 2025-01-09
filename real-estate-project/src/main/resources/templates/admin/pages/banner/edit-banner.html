@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Banner</title>
+    <!--    Common Css-->
+    <div th:replace="~{admin/common :: common(~{::link})}"></div>
+</head>
+<body>
+<input type="checkbox" id="sidebar-toggle">
+<!--Sidebar -->
+<div th:replace="~{admin/components/sidebar :: sidebar}"></div>
+
+
+<!--Main Content -->
+<div class="main-content">
+    <header th:replace="~{admin/components/header :: header}"></header>
+    <main>
+        <div class="container">
+            <div class="card mt-3 col-md-8 offset-md-2  p-2">
+                <h1 class="text-center">Edit Banner</h1>
+                <div class="card-body">
+                    <form th:action="@{/admin/banner/edit}" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="bannerId" th:value="${banner.bannerId}">
+                        <div class="form-group mb-3">
+                            <label for="name">Banner Name</label>
+                            <input type="text" class="form-control" id="name" name="title" th:value="${banner.title}" >
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" rows="6" name="description" >[[${banner.description}]]</textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div class="offset-sm-4 col-sm-8">
+                                <img alt="" width="200" th:src="|data:image/jpeg;base64,${banner.image}|" class="rounded img-thumbnail">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="imageFile">Image</label>
+                            <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*" >
+                        </div>
+                        <button type="submit" class="offset-md-4 btn btn-primary py-2 col-md-4">Update Banner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!--Common Js-->
+<div th:replace="~{admin/common :: common_js(~{::script})}"></div>
+</body>
+</html>
+

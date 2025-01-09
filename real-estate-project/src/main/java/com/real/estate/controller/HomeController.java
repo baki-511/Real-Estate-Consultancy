@@ -1,9 +1,6 @@
 package com.real.estate.controller;
 
-import com.real.estate.service.BlogService;
-import com.real.estate.service.GalleryService;
-import com.real.estate.service.ServicesService;
-import com.real.estate.service.TestimonialService;
+import com.real.estate.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,12 +22,16 @@ public class HomeController {
     @Autowired
     private BlogService blogService;
     
+    @Autowired
+    private BannerService bannerService;
+    
     
     @GetMapping({"/", "/home"})
     public String home(Model model) {
         model.addAttribute("testimonials", testimonialService.getAllTestimonial());
         model.addAttribute("logos", galleryService.getAllGallery());
         model.addAttribute("services", servicesService.getAllServices());
+        model.addAttribute("banners", bannerService.getAllBanner());
         return "index";
     }
     

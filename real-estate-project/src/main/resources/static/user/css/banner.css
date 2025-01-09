@@ -96,10 +96,14 @@ img {
         margin-top: 55px;
     }
 }
+
 @media (max-width: 1050px){
     .container{
         margin: 0 auto;
         width: 92%;
+    }
+    .home-text{
+        width:92%;
     }
 }
 
