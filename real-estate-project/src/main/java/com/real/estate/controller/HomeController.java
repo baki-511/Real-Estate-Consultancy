@@ -52,6 +52,8 @@ public class HomeController {
     
     @GetMapping("/blog")
     public String blog(Model model) {
+        model.addAttribute("testimonials", testimonialService.getAllTestimonial());
+        model.addAttribute("logos", galleryService.getAllGallery());
         model.addAttribute("blogs", blogService.getAllBlog());
         model.addAttribute("services", servicesService.getAllServices());
         return "/pages/blog";
