@@ -42,12 +42,14 @@
             </ul>
         </div>
         <div class="sec quicklinks">
-            <h2>Shop</h2>
+            <h2>Services</h2>
             <ul>
-                <li><a href="">Men</a></li>
-                <li><a href="">Women</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Shoes</a></li>
+                <li th:each="service : ${services}">
+                    <a th:href="@{'/service/'+${service.serviceId}}" th:text="${service.title}">Men</a>
+                </li>
+<!--                <li><a href="">Women</a></li>-->
+<!--                <li><a href="">Kids</a></li>-->
+<!--                <li><a href="">Shoes</a></li>-->
             </ul>
         </div>
         <div class="sec contact">

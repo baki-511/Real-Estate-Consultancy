@@ -35,23 +35,28 @@
                     </div>
 
                     <ul class="dropdown__menu">
-                        <li>
-                            <a th:href="@{/service/1}" class="dropdown__link">
-                                Service 1
-                            </a>
+                        <li th:each="service : ${services}">
+                            <a th:href="@{'/service/' + ${service.serviceId}}" class="dropdown__link"
+                               th:text="${service.title}"></a>
                         </li>
+<!--                        -->
+<!--                        <li>-->
+<!--                            <a th:href="@{/service/1}" class="dropdown__link">-->
+<!--                                Service 1-->
+<!--                            </a>-->
+<!--                        </li>-->
 
-                        <li>
-                            <a href="#" class="dropdown__link">
-                                Service 2
-                            </a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="#" class="dropdown__link">-->
+<!--                                Service 2-->
+<!--                            </a>-->
+<!--                        </li>-->
 
-                        <li>
-                            <a th:href="@{/about}" class="dropdown__link">
-                                Service 3
-                            </a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a th:href="@{/about}" class="dropdown__link">-->
+<!--                                Service 3-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ul>
                 </li>
 

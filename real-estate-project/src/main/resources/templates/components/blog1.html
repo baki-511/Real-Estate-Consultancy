@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="row" th:fragment="blog">
+    <div class="img-wrapper">
+        <img  th:src="|data:image/jpeg;base64,${blog.image}|" alt="" />
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 th:text="${blog.title}">This is Event Heading</h2>
+            <p th:text="${blog.description}">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
+                delectus quam voluptas enim nam corrupti doloremque accusantium sint
+                rerum animi esse, veniam ullam repellendus totam? Minima, eveniet
+                sed optio repudiandae veniam, dolor in iusto natus nesciunt, nemo
+                error recusandae cupiditate asperiores fugiat id adipisci voluptas!
+                Assumenda exercitationem doloremque blanditiis quibusdam.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
