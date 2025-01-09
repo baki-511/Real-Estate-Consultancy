@@ -8,7 +8,7 @@ function initParadoxway() {
       slidesPreview: 1,
       spaceBetween: 20,
       loop: true,
-      autoplay: true,
+      autoplay: false,
       grabCursor: true,
       mousewheel: false,
       centeredSlides: true,
