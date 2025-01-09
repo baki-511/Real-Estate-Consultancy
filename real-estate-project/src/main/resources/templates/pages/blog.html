@@ -47,6 +47,15 @@
 <!-- Blog Section -->
 <div th:replace="~{components/blog :: blog}"></div>
 
+<!--Logo Slider-->
+<div th:insert="~{components/common :: head-title('Our Clients', '')}"></div>
+<div th:replace="~{components/logo-slider :: logo-slider}"></div>
+
+<!--Testimonial Slider-->
+<div th:insert="~{components/common :: head-title('Testimonials', 'What Our Clients Have to Say')}"></div>
+<div th:replace="~{components/testimonial :: testimonial}"></div>
+
+
 <!-- Footer Section -->
 <div th:replace="~{components/footer :: footer}"></div>
 
