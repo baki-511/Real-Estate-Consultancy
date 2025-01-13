@@ -19,11 +19,13 @@
 <!--Page Info-->
 <div th:insert="~{components/common :: section-head('Contact Us','/contact', 'Contact Us')}"></div>
 
-<!--Float Msg-->
-<div th:replace="~{components/float-msg :: toast}"></div>
+<div style="position: relative;">
+    <!--Float Msg-->
+    <div th:replace="~{components/float-msg :: toast}"></div>
 
-<!-- Contact Section -->
-<div th:replace="~{components/contact :: contact}"></div>
+    <!-- Contact Section -->
+    <div th:replace="~{components/contact :: contact}"></div>
+</div>
 <div class="map_main" style="display: block;">
     <div class="map-responsive">
         <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France"

@@ -40,8 +40,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="banner : ${banners}" class="py-3">
-                            <td class="text-nowrap px-2" th:text="${banner.bannerId}"></td>
+                        <tr th:each="banner, iterStat : ${banners}" class="py-3">
+                            <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${banner.title}"></td>
                             <td class="" th:text="${banner.description}"></td>
                             <td class="text-nowrap px-2" style="min-width:200px">

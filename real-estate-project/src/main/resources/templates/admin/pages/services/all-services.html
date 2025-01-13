@@ -22,7 +22,7 @@
         <div class="container">
             <!--Float Msg-->
             <div th:replace="~{admin/components/float-msg :: toast}"></div>
-            <h2 class="text-center py-3 bg-light">All Products</h2>
+            <h2 class="text-center py-3 bg-light">All Service</h2>
             <div class="card" >
                 <div class="table-responsive">
                     <table class="table">
@@ -36,8 +36,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="service : ${services}" class="py-3">
-                            <td class="text-nowrap px-2" th:text="${service.serviceId}"></td>
+                        <tr th:each="service, iterStat : ${services}" class="py-3">
+                            <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${service.title}"></td>
                             <td class="" th:text="${service.description}"></td>
                             <td class="text-nowrap px-2" style="min-width:200px">

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/contact")
@@ -27,8 +28,11 @@ public class ContactUsController {
     }
    
     @PostMapping("/save")
-    public String saveContact(@ModelAttribute ContactUs contactUs) {
-        contactUsService.addContactUs(contactUs);
+    public String saveContact(@ModelAttribute ContactUs contactUs, RedirectAttributes redirectAttributes) {
+        ContactUs savedContactUs = contactUsService.addContactUs(contactUs);
+        if (savedContactUs != null) {
+            redirectAttributes.addFlashAttribute("message", "Message Sent Successfully!");
+        }
         return "redirect:/contact";
     }
 }

@@ -20,7 +20,9 @@
     <header th:replace="~{admin/components/header :: header}"></header>
     <main>
         <div class="container">
-            <h2 class="text-center py-3 bg-light">All Products</h2>
+            <!--Float Msg-->
+            <div th:replace="~{admin/components/float-msg :: toast}"></div>
+            <h2 class="text-center py-3 bg-light">All Contacts</h2>
             <div class="card" >
                 <div class="table-responsive">
                     <table class="table">
@@ -36,8 +38,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="contact : ${contacts}" class="py-3">
-                            <td class="text-nowrap px-2" th:text="${contact.contactUsId}"></td>
+                        <tr th:each="contact, iterStat : ${contacts}" class="py-3">
+                            <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${contact.name}"></td>
                             <td class="text-nowrap px-2" th:text="${contact.email}"></td>
                             <td class="text-nowrap px-2" th:text="${contact.venue}"></td>
