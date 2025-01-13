@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/admin")
@@ -26,8 +27,11 @@ public class AdminTestimonialController {
     @PostMapping("/testimonial/add")
     public String addTestimonial(@ModelAttribute Testimonial testimonials,
                               @RequestParam("imageFile") MultipartFile imageFile,
-                              Model model) {
-        testimonialsService.addTestimonial(testimonials, imageFile);
+                                 RedirectAttributes redirectAttributes) {
+        Testimonial addedTestimonial = testimonialsService.addTestimonial(testimonials, imageFile);
+        if (addedTestimonial != null) {
+            redirectAttributes.addFlashAttribute("message", "Saved Successfully!");
+        }
         return "redirect:/admin/testimonials/all";
     }
     
@@ -46,14 +50,21 @@ public class AdminTestimonialController {
     
     @PostMapping("/testimonial/edit")
     public String editService(@ModelAttribute Testimonial testimonials,
-                              @RequestParam("imageFile") MultipartFile imageFile ) {
-        testimonialsService.updateTestimonial(testimonials, imageFile);
+                              @RequestParam("imageFile") MultipartFile imageFile,
+                              RedirectAttributes redirectAttributes ) {
+        Testimonial updatedTestimonial = testimonialsService.updateTestimonial(testimonials, imageFile);
+        if (updatedTestimonial != null) {
+            redirectAttributes.addFlashAttribute("message", "Updated Successfully!");
+        }
         return "redirect:/admin/testimonials/all";
     }
     
     @GetMapping("/testimonial/delete/{testimonialId}")
-    public String deleteService(@PathVariable Long testimonialId) {
+    public String deleteService(@PathVariable Long testimonialId, RedirectAttributes redirectAttributes) {
         ApiResponse response = testimonialsService.deleteTestimonialById(testimonialId);
+        if (response != null) {
+            redirectAttributes.addFlashAttribute("message", "Deleted Successfully!");
+        }
         return "redirect:/admin/testimonials/all";
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/admin")
@@ -26,9 +27,11 @@ public class AdminBlogController {
     @PostMapping("/blog/add")
     public String addBlog(@ModelAttribute Blog blog,
                               @RequestParam("imageFile") MultipartFile imageFile,
-                              Model model) {
-        System.out.println(blog);
-        blogService.addBlog(blog, imageFile);
+                          RedirectAttributes redirectAttributes) {
+        Blog savedBlog = blogService.addBlog(blog, imageFile);
+        if (savedBlog != null) {
+            redirectAttributes.addFlashAttribute("message", "Saved Successfully!");
+        }
         return "redirect:/admin/blogs/all";
     }
     
@@ -47,14 +50,21 @@ public class AdminBlogController {
     
     @PostMapping("/blog/edit")
     public String editBlog(@ModelAttribute Blog blog,
-                              @RequestParam("imageFile") MultipartFile imageFile ) {
-        blogService.updateBlog(blog, imageFile);
+                              @RequestParam("imageFile") MultipartFile imageFile,
+                           RedirectAttributes redirectAttributes ) {
+        Blog updatedBlog = blogService.updateBlog(blog, imageFile);
+        if (updatedBlog != null) {
+            redirectAttributes.addFlashAttribute("message", "Updated Successfully!");
+        }
         return "redirect:/admin/blogs/all";
     }
     
     @GetMapping("/blog/delete/{blogId}")
-    public String deleteBlog(@PathVariable Long blogId) {
+    public String deleteBlog(@PathVariable Long blogId, RedirectAttributes redirectAttributes) {
         ApiResponse response = blogService.deleteBlogById(blogId);
+        if (response != null) {
+            redirectAttributes.addFlashAttribute("message", "Deleted Successfully!");
+        }
         return "redirect:/admin/blogs/all";
     }
 }

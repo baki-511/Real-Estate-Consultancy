@@ -18,8 +18,14 @@
 <!--Main Content -->
 <div class="main-content">
     <header th:replace="~{admin/components/header :: header}"></header>
+
+
+
     <main>
         <div class="container">
+            <!--Float Msg-->
+            <div th:replace="~{admin/components/float-msg :: toast}"></div>
+
             <h2 class="text-center py-3 bg-light">All Banner</h2>
             <div class="card" >
                 <div class="table-responsive">

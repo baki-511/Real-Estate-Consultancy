@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/admin")
@@ -26,9 +27,11 @@ public class AdminServiceController {
     @PostMapping("/service/add")
     public String addServices(@ModelAttribute Services services,
                               @RequestParam("imageFile") MultipartFile imageFile,
-                              Model model) {
-        System.out.println(services);
-        servicesService.addService(services, imageFile);
+                              RedirectAttributes redirectAttributes) {
+        Services addedService = servicesService.addService(services, imageFile);
+        if (addedService != null) {
+            redirectAttributes.addFlashAttribute("message", "Saved Successfully!");
+        }
         return "redirect:/admin/services/all";
     }
     
@@ -47,14 +50,21 @@ public class AdminServiceController {
     
     @PostMapping("/service/edit")
     public String editService(@ModelAttribute Services services,
-                              @RequestParam("imageFile") MultipartFile imageFile ) {
-        servicesService.updateService(services, imageFile);
+                              @RequestParam("imageFile") MultipartFile imageFile,
+                              RedirectAttributes redirectAttributes ) {
+        Services updatedService = servicesService.updateService(services, imageFile);
+        if (updatedService != null) {
+            redirectAttributes.addFlashAttribute("message", "Updated Successfully!");
+        }
         return "redirect:/admin/services/all";
     }
     
     @GetMapping("/service/delete/{serviceId}")
-    public String deleteService(@PathVariable Long serviceId) {
+    public String deleteService(@PathVariable Long serviceId, RedirectAttributes redirectAttributes) {
         ApiResponse response = servicesService.deleteServiceById(serviceId);
+        if (response != null) {
+            redirectAttributes.addFlashAttribute("message", "Deleted Successfully!");
+        }
         return "redirect:/admin/services/all";
     }
 }

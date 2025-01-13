@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/admin")
@@ -24,9 +25,11 @@ public class AdminBannerController {
     @PostMapping("/banner/add")
     public String addBanner(@ModelAttribute Banner banner,
                             @RequestParam("imageFile") MultipartFile imageFile,
-                            Model model) {
-        System.out.println(banner);
-        bannerService.addBanner(banner, imageFile);
+                            RedirectAttributes redirectAttributes) {
+        Banner savedBanner = bannerService.addBanner(banner, imageFile);
+        if (savedBanner != null) {
+            redirectAttributes.addFlashAttribute("message", "Saved Successfully!");
+        }
         return "redirect:/admin/banners/all";
     }
     
@@ -45,14 +48,21 @@ public class AdminBannerController {
     
     @PostMapping("/banner/edit")
     public String editBanner(@ModelAttribute Banner banner,
-                             @RequestParam("imageFile") MultipartFile imageFile) {
-        bannerService.updateBanner(banner, imageFile);
+                             @RequestParam("imageFile") MultipartFile imageFile,
+                             RedirectAttributes redirectAttributes) {
+        Banner updateBanner = bannerService.updateBanner(banner, imageFile);
+        if (updateBanner != null) {
+            redirectAttributes.addFlashAttribute("message", "Updated Successfully!");
+        }
         return "redirect:/admin/banners/all";
     }
     
     @GetMapping("/banner/delete/{bannerId}")
-    public String deleteBanner(@PathVariable Integer bannerId) {
+    public String deleteBanner(@PathVariable Integer bannerId, RedirectAttributes redirectAttributes) {
         ApiResponse response = bannerService.deleteBannerById(bannerId);
+        if (response != null) {
+            redirectAttributes.addFlashAttribute("message", "Deleted Successfully!");
+        }
         return "redirect:/admin/banners/all";
     }
     
