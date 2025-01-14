@@ -4,11 +4,17 @@ import com.real.estate.entity.Services;
 import com.real.estate.payload.ApiResponse;
 import com.real.estate.service.ServicesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -36,8 +42,30 @@ public class AdminServiceController {
     }
     
     @GetMapping("/services/all")
-    public String allService(Model model) {
-        model.addAttribute("services", servicesService.getAllServices());
+    public String allServices(Model model) {
+        return allService(model, 0, 2);
+    }
+    
+    @GetMapping("/services/all")
+    public String allService(Model model, @PathVariable int page, int size) {
+        List<Services> allServices = servicesService.getAllServices();
+        model.addAttribute("services", allServices);
+        
+        // Pagination
+        Pageable pageable = PageRequest.of(page, size);
+        int total = allServices.size();
+        int start = (int) pageable.getOffset();
+        int end = Math.min((start + pageable.getPageSize()), total);
+        List<Services> subList = allServices.subList(start, end);
+        Page<Services> servicePage = new PageImpl<>(subList, pageable, total);
+        
+        // Attributes
+        model.addAttribute("services", servicePage);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", servicePage.getTotalPages());
+        model.addAttribute("totalItems", servicePage.getTotalElements());
+        model.addAttribute("size", size);
+        
         return "/admin/pages/services/all-services";
     }
     

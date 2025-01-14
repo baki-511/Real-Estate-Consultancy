@@ -4,11 +4,17 @@ import com.real.estate.entity.Blog;
 import com.real.estate.payload.ApiResponse;
 import com.real.estate.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -37,7 +43,28 @@ public class AdminBlogController {
     
     @GetMapping("/blogs/all")
     public String allBlog(Model model) {
-        model.addAttribute("blogs", blogService.getAllBlog());
+        return allBlog(model, 0, 2);
+    }
+    
+    @GetMapping("/blogs/all")
+    public String allBlog(Model model, @PathVariable int page, int size) {
+        List<Blog> allBlog = blogService.getAllBlog();
+        
+        // Pagination
+        Pageable pageable = PageRequest.of(page, size);
+        int total = allBlog.size();
+        int start = (int) pageable.getOffset();
+        int end = Math.min((start + pageable.getPageSize()), total);
+        List<Blog> subList = allBlog.subList(start, end);
+        Page<Blog> blogPage = new PageImpl<>(subList, pageable, total);
+        
+        // Attributes
+        model.addAttribute("blogs", blogPage);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", blogPage.getTotalPages());
+        model.addAttribute("totalItems", blogPage.getTotalElements());
+        model.addAttribute("size", size);
+        
         return "/admin/pages/blogs/all-blogs";
     }
     

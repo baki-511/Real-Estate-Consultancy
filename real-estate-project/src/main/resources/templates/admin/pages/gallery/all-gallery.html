@@ -38,7 +38,7 @@
                             <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
 
                             <td class="text-nowrap px-2" style="min-width:200px">
-                                <img alt="" width="200" height="160" th:src="|data:image/jpeg;base64,${gallery.image}|" class="img-thumbnail">
+                                <img alt="" width="150" height="120" th:src="|data:image/jpeg;base64,${gallery.image}|" class="img-thumbnail">
                             </td>
                             <td class="text-nowrap px-2">
                                 <a th:href="@{'/admin/gallery/delete/'+ ${gallery.galleryId}}" class="btn btn-danger"><i class="fa-regular fa-trash-can fa-xs"></i></a>
@@ -46,6 +46,19 @@
                         </tr>
                         </tbody>
                     </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li th:if="${currentPage!=0}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/gallery/all/${currentPage - 1}?size=${size}|}">Prev</a>
+                            </li>
+                            <li th:each="i:${#numbers.sequence(1,totalPages)}" th:classappend="${currentPage == (i-1) ? 'active': ''}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/gallery/all/${i - 1}?size=${size}|}">[[${i}]]</a>
+                            </li>
+                            <li th:if="${currentPage + 1!=totalPages}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/gallery/all/${currentPage + 1}?size=${size}|}">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

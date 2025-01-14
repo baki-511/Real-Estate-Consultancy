@@ -36,7 +36,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="testimonial, iterStat : ${testimonials}" class="py-3">
+                        <tr th:each="testimonial, iterStat : ${testimonials.content}" class="py-3">
                             <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${testimonial.title}"></td>
                             <td class="" th:text="${testimonial.description}"></td>
@@ -50,6 +50,19 @@
                         </tr>
                         </tbody>
                     </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li th:if="${currentPage!=0}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/testimonial/all/${currentPage - 1}?size=${size}|}">Prev</a>
+                            </li>
+                            <li th:each="i:${#numbers.sequence(1,totalPages)}" th:classappend="${currentPage == (i-1) ? 'active': ''}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/testimonial/all/${i - 1}?size=${size}|}">[[${i}]]</a>
+                            </li>
+                            <li th:if="${currentPage + 1!=totalPages}" class="page-item">
+                                <a class="page-link" th:href="@{|/admin/testimonial/all/${currentPage + 1}?size=${size}|}">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
