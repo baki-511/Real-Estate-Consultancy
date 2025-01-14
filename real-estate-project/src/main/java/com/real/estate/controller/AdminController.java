@@ -37,6 +37,7 @@ public class AdminController {
     public String allContactUs(Model model, @PathVariable int page, int size) {
         List<ContactUs> allContactUs = contactUsService.getAllContactUs();
         
+        // Pagination
         Pageable pageable = PageRequest.of(page, size);
         int total = allContactUs.size();
         int start = (int) pageable.getOffset();
@@ -44,6 +45,7 @@ public class AdminController {
         List<ContactUs> subList = allContactUs.subList(start, end);
         Page<ContactUs> contactUsPage = new PageImpl<>(subList, pageable, total);
         
+        // Attributes
         model.addAttribute("contacts", contactUsPage);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", contactUsPage.getTotalPages());
