@@ -43,7 +43,7 @@ public class AdminBlogController {
     
     @GetMapping("/blogs/all")
     public String allBlog(Model model) {
-        return allBlog(model, 0, 2);
+        return allBlog(model, 0, 5);
     }
     
     @GetMapping("/blogs/all/{page}")

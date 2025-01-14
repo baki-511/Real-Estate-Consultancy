@@ -30,7 +30,7 @@ public class AdminController {
     
     @GetMapping("/contact/all")
     public String allContactus(Model model) {
-        return allContactUs(model, 0, 5);
+        return allContactUs(model, 0, 10);
     }
     
     @GetMapping("/contact/all/{page}")

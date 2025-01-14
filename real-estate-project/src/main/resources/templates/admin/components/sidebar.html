@@ -11,7 +11,9 @@
 <div class="sidebar" th:fragment="sidebar">
     <div class="sidebar-header">
         <h3 class="brand">
-            <i class="fa-solid fa-link"></i>
+<!--            <i class="fa-solid fa-link"></i>-->
+            <i class="fa-solid fa-globe"></i>
+<!--            <img th:src="@{/user/img/logo.png}" width="70px"; height="50px" alt="">-->
             <span style="font-size:18px;">ABC Company</span>
         </h3>
         <label for="sidebar-toggle"><i class="fa-solid fa-bars"></i></label>
@@ -29,7 +31,7 @@
             <li>
                 <a th:href="@{/admin/services/add}">
                     <div style="width: 1.1rem;">
-                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-cube"></i>
                     </div>
                     <span>Add Service</span>
                 </a>
@@ -37,7 +39,7 @@
             <li>
                 <a th:href="@{/admin/services/all}">
                     <div style="width: 1.1rem;">
-                        <i class="fa-solid fa-calendar"></i>
+                        <i class="fa-solid fa-list"></i>
                     </div>
                     <span>All Services</span>
                 </a>
@@ -111,7 +113,7 @@
             <li>
                 <a th:href=@{/admin/contact/all}>
                     <div style="width: 1.1rem;">
-                        <i class="fa-brands fa-paypal"></i>
+                        <i class="fa-solid fa-address-card"></i>
                     </div>
                     <span>All ContactUs</span>
                 </a>

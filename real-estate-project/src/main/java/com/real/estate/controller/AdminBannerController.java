@@ -1,7 +1,6 @@
 package com.real.estate.controller;
 
 import com.real.estate.entity.Banner;
-import com.real.estate.entity.ContactUs;
 import com.real.estate.payload.ApiResponse;
 import com.real.estate.service.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,7 @@ public class AdminBannerController {
     
     @GetMapping("/banners/all")
     public String allBanner(Model model) {
-        return allBanner(model, 0, 2);
+        return allBanner(model, 0, 5);
     }
     
     @GetMapping("/banners/all/{page}")

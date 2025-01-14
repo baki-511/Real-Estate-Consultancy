@@ -26,7 +26,7 @@ public class AdminGalleryController {
     
     @GetMapping("/gallery/all")
     public String getAllGallery(Model model) {
-        return getAllGallery(model, 0, 3);
+        return getAllGallery(model, 0, 5);
     }
     
     @GetMapping("/gallery/all/{page}")

@@ -43,7 +43,7 @@ public class AdminTestimonialController {
     
     @GetMapping("/testimonials/all")
     public String allTestimonial(Model model) {
-        return allTestimonial(model, 0, 2);
+        return allTestimonial(model, 0, 5);
     }
     
     @GetMapping("/testimonials/all/{page}")
