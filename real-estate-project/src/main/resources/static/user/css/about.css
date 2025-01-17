@@ -22,8 +22,8 @@
 
 /* About Us Section  */
 .row {
-    width: 80%;
-    max-width: 1170px;
+    width: 90%;
+    /*max-width: 90%;*/
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;

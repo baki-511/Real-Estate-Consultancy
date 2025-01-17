@@ -5,49 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Real Estate</title>
+    <title>About Section</title>
     <!--    Common Css-->
     <div th:replace="~{common :: common(~{::link})}"></div>
-    <link rel="stylesheet" th:href="@{/user/css/counter.css}">
-    <link rel="stylesheet" th:href="@{/user/css/expertise.css}">
-    <link rel="stylesheet" th:href="@{/user/css/banner.css}">
+    <link rel="stylesheet" th:href="@{/user/css/news.css}">
+
 </head>
 <body>
-
 
 <!--Header Section-->
 <div th:replace="~{components/header :: header}"></div>
 
-<!--Banner Section-->
-<div th:replace="~{components/banner :: banner}"></div>
+<!--Page Info-->
+<div th:insert="~{components/common :: section-head('News','/news', 'News')}"></div>
 
 <!-- About Section -->
-<div th:insert="~{components/common :: head-title('About Us', 'About Our Company')}"></div>
-<div th:replace="~{components/about :: about}"></div>
-
-<!-- Counter Section -->
-<div th:replace="~{components/counters :: counters}"></div>
+<div th:replace="~{components/news :: news}"></div>
 
 <!--Logo Slider-->
-<div th:insert="~{components/common :: head-title('', 'Our Clients')}"></div>
+<div th:insert="~{components/common :: head-title('Our Clients', '')}"></div>
 <div th:replace="~{components/logo-slider :: logo-slider}"></div>
 
 <!--Testimonial Slider-->
 <div th:insert="~{components/common :: head-title('Testimonials', 'What Our Clients Have to Say')}"></div>
 <div th:replace="~{components/testimonial :: testimonial}"></div>
 
-<!--Logo Slider-->
-<div th:insert="~{components/common :: head-title('', 'Our Expertise')}"></div>
-<div th:replace="~{components/expertise :: expertise}"></div>
 
 <!-- Footer Section -->
 <div th:replace="~{components/footer :: footer}"></div>
 
 
+
 <!-- Common Js -->
 <div th:replace="~{common :: common_js(~{::script})}"></div>
-<script th:src=@{/user/js/counter.js}></script>
-<script th:src=@{/user/js/banner.js}></script>
-
 </body>
 </html>

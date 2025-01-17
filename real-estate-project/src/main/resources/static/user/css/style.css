@@ -71,7 +71,8 @@ a {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1120px;
+  /*max-width: 1120px;*/
+  max-width: 90%;
   margin-inline: 1.5rem;
 }
 
@@ -441,6 +442,11 @@ a {
 
 
 /* Testimonial Section Start  */
+.testimonial {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .testimonial-carousel-wrap {
   text-align: center;
   position: relative;

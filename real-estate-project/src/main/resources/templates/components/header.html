@@ -12,8 +12,8 @@
     <nav class="nav container">
         <div class="nav__data">
             <a href="#" class="nav__logo">
-<!--                <i class="ri-planet-line"></i> ABC Company-->
-                <img src="/user/img/logo.png" style="width: 120px; height: 50px;"  alt="logo">
+                <!--                <i class="ri-planet-line"></i> ABC Company-->
+                <img src="/user/img/logo.png" style="width: 120px; height: 50px;" alt="logo">
             </a>
 
             <div class="nav__toggle" id="nav-toggle">
@@ -40,34 +40,34 @@
                             <a th:href="@{'/service/' + ${service.serviceId}}" class="dropdown__link"
                                th:text="${service.title}"></a>
                         </li>
-<!--                        -->
-<!--                        <li>-->
-<!--                            <a th:href="@{/service/1}" class="dropdown__link">-->
-<!--                                Service 1-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li>-->
-<!--                            <a href="#" class="dropdown__link">-->
-<!--                                Service 2-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li>-->
-<!--                            <a th:href="@{/about}" class="dropdown__link">-->
-<!--                                Service 3-->
-<!--                            </a>-->
-<!--                        </li>-->
                     </ul>
                 </li>
 
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                        Blogs & News <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a th:href="@{/blog}" class="dropdown__link">
+                                Blogs
+                            </a>
+                        </li>
 
-                <li><a th:href="@{/blog}" class="nav__link">Blogs</a></li>
+                        <li>
+                            <a th:href="@{/news}" class="dropdown__link">
+                                News
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+<!--                <li><a th:href="@{/blog}" class="nav__link">Blogs</a></li>-->
 
 
                 <!--=============== DROPDOWN 2 ===============-->
 
 
+                <li><a th:href="@{/career}" class="nav__link">Career</a></li>
                 <li><a th:href="@{/contact}" class="nav__link">Contact</a></li>
             </ul>
         </div>
