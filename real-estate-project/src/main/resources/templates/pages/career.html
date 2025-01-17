@@ -8,27 +8,29 @@
     <title>About Section</title>
     <!--    Common Css-->
     <div th:replace="~{common :: common(~{::link})}"></div>
-    <link rel="stylesheet" th:href="@{/user/css/news.css}">
+    <link rel="stylesheet" th:href="@{/user/css/career.css}">
+    <style>
+        .section-head{
+            margin-top: 37px;
+        }
 
+        @media (min-width: 1118px){
+            .section-head{
+                margin-top: 69px;
+            }
+        }
+    </style>
 </head>
 <body>
-
+z
 <!--Header Section-->
 <div th:replace="~{components/header :: header}"></div>
 
 <!--Page Info-->
-<div th:insert="~{components/common :: section-head('News','/news', 'News')}"></div>
+<div th:insert="~{components/common :: section-head('Career','/career', 'Career')}"></div>
 
-<!-- News Section -->
-<div th:replace="~{components/news :: news}"></div>
-
-<!--Logo Slider-->
-<div th:insert="~{components/common :: head-title('Our Clients', '')}"></div>
-<div th:replace="~{components/logo-slider :: logo-slider}"></div>
-
-<!--Testimonial Slider-->
-<div th:insert="~{components/common :: head-title('Testimonials', 'What Our Clients Have to Say')}"></div>
-<div th:replace="~{components/testimonial :: testimonial}"></div>
+<!-- Career Section -->
+<div th:replace="~{components/career :: career}"></div>
 
 
 <!-- Footer Section -->

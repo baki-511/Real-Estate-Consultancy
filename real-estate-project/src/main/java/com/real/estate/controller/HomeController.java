@@ -67,6 +67,12 @@ public class HomeController {
         return "/pages/news";
     }
     
+    @GetMapping("/career")
+    public String career(Model model) {
+        model.addAttribute("services", servicesService.getAllServices());
+        return "/pages/career";
+    }
+    
     
     @GetMapping("/service/{serviceId}")
     public String getContactUs(@PathVariable Long serviceId, Model model) {
